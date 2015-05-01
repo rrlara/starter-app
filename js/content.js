@@ -65,6 +65,32 @@ app.controller('ContentCtrl', function($scope, $rootScope, $mdSidenav, $mdBottom
     }
     initialLoadOfMoments();
 
+    $rootScope.getTable = function(className) {
+
+        //$rootScope.data = {
+        //    items: [],
+        //    total: 0
+        //}
+
+        $scope.loadingMoments = true;
+
+        var query = parseQuery.new(className);
+
+        query.limit(1000);
+        query.descending("createAt");
+
+        parseQuery.find(query)
+            .then(function(results) {
+                $scope.loadingMoments = false;
+                $scope.data.items = results;
+            }, function(error) {
+                $scope.loadingMoments = false;
+                alert(JSON.stringify(error));
+            });
+
+
+    };
+
 
 
     $rootScope.getLatLngs = function (item){
@@ -72,24 +98,6 @@ app.controller('ContentCtrl', function($scope, $rootScope, $mdSidenav, $mdBottom
         $rootScope.clickedItem = item.attributes;
 
     }
-
-    //$scope.timeFromNow = function (dateAgo){
-    //
-    //    //var dateA = moment().subtract('days', 7);
-    //    //console.log(dateA.fromNow());
-    //    var dateNow = new Date();
-    //
-    //    var date1 = moment(dateAgo);
-    //    //var date2 = moment('2014-12-11');
-    //    //console.log(date1.from(dateNow));
-    //
-    //    var daysAgo = moment(dateAgo).fromNow();
-    //
-    //    //console.log(daysAgo);
-    //
-    //    return daysAgo;
-    //
-    //}
 
 
     $scope.todos = [

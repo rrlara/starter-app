@@ -1,0 +1,48 @@
+
+.bgImage {
+   padding: 0px;
+  /*background-image: url("img/saxon.jpg");*/
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.bgCardTrans{
+  background-color:rgba(255,255,255,0.5);
+}
+
+md-backdrop.md-opaque.md-default-theme {
+  background-color: rgba(0,0,0,0.4) !important;
+}
+
+md-default-theme{
+  height: 100%;
+}
+
+.mapContainer{
+  height: calc(100% - 10%);
+  width: 100%;
+}
+
+.progressCircular{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+}
+.map-marker{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: #ffffff;
+  font-size: 30px;
+  width: 50px;
+  height: 50px;
+}
+
+.map-marker i {
+  margin-left: 34%;
+  /* margin-right: 50%; */
+  margin-top: 22%;
+}
+.transparent{
+  /*background:rgba(255,255,255,0.5);*/
+  background:rgba(0,0,0,.15);
+}

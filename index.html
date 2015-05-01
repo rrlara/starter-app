@@ -8,9 +8,10 @@
   <meta name="description" content="">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
 
-  <title>CodePen - Angular Material Design Starter App</title>
+  <title>Leap Spot</title>
 
     <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
 </head>
 
@@ -19,6 +20,8 @@
   <html lang="en" ng-app="LeapSpot">
   <head>
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.css">
+
+    <link rel="stylesheet" href="css/mystyle.css">
   </head>
   <body layout="row" ng-controller="AppCtrl">
     <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
@@ -27,8 +30,8 @@
         <div layout="column" class="md-toolbar-tools-bottom inset">
           <user-avatar></user-avatar>
           <span></span>
-          <div>Firstname Lastname</div>
-          <div>email@domainname.com</div>
+          <div>Rene Rodriguez</div>
+          <div>rrlara@gmail.com</div>
         </div>
       </md-toolbar>
       <md-list>
@@ -38,7 +41,7 @@
             <div class="inset">
               <ng-md-icon icon="{{item.icon}}"></ng-md-icon>
             </div>
-            <div class="inset">{{item.title}}
+            <div class="inset" ng-click="getTable(item.title)">{{item.title}}
             </div>
           </md-item-content>
         </a>
@@ -109,7 +112,7 @@
 
       </md-toolbar>
       <md-content flex md-scroll-y>
-        <ui-view layout="column" layout-fill layout-padding ng-controller="ContentCtrl">
+        <ui-view layout="column" layout-fill layout-padding ng-controller="ContentCtrl" class="bgImage">
           <div class="inset" hide-sm></div>
             <ng-switch on="data.selectedIndex" class="tabpanel-container">
               <div role="tabpanel"
@@ -121,12 +124,14 @@
                    layout="row" layout-align="center center">
 
 
-                  <md-card flex-gt-sm="90" flex-gt-md="80">
+                  <md-card flex-gt-sm="90" flex-gt-md="80" class="bgCardTrans">
+                    <md-progress-circular md-mode="indeterminate" ng-show="loadingMoments" class="progressCircular"></md-progress-circular>
                     <md-card-content ng-repeat="item in data.items | filter:search">
 
                       <md-card flex-gt-sm="90" flex-gt-md="80">
                       <div class="imageContainer">
                       <img  src="{{item.attributes.thumbnail._url}}" alt="Smiley face" width="400">
+                        <img  ng-if="!item.attributes.thumbnail._url" src="{{item.attributes.imageFile._url}}" alt="Smiley face" width="400">
                       <div class="map-marker transparent" ng-click="getLatLngs(item);showListBottomSheet($event)">
                       <i class="fa fa-map-marker"></i>
                       </div>
@@ -146,28 +151,6 @@
                     </md-card-content>
                   </md-card>
 
-
-                <!--<md-card flex-gt-sm="90" flex-gt-md="80" ng-repeat="item in data.items">-->
-                  <!--<div class="imageContainer">-->
-                    <!--<img  src="{{item.attributes.thumbnail._url}}" alt="Smiley face" width="400">-->
-                    <!--<div class="map-marker transparent" ng-click="getLatLngs(item);showListBottomSheet($event)">-->
-                      <!--<i class="fa fa-map-marker"></i>-->
-                    <!--</div>-->
-                    <!--<div class="bottomBand transparentBottom">-->
-                      <!--<span class="md-title">{{item.attributes.comment}}</span>-->
-                      <!--<span class="md-subhead">{{timeFromNow(item.createdAt)}}</span>-->
-                    <!--</div>-->
-                  <!--</div>-->
-                  <!--<md-card-content>-->
-                    <!--&lt;!&ndash;<p>&ndash;&gt;-->
-                    <!--&lt;!&ndash;</p>&ndash;&gt;-->
-                  <!--</md-card-content>-->
-                  <!--<md-action-bar layout="row" layout-align="end center">-->
-                    <!--<md-button ng-click="showAlert($event)">Action 1</md-button>-->
-                  <!--</md-action-bar>-->
-                <!--</md-card>-->
-
-
               </div>
               <div role="tabpanel"
                    id="tab2-content"
@@ -175,7 +158,8 @@
                    ng-switch-when="1"
                    md-swipe-left="next()"
                    md-swipe-right="previous()" 
-                   layout="row" layout-align="center center">
+                   layout="row" layout-align="center center"
+                   class="mapContainer">
                   <md-card flex-gt-sm="90" flex-gt-md="80">
                     <md-card-content>
                     </md-card-content>

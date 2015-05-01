@@ -7,17 +7,17 @@ app.controller('AppCtrl', ['$scope', '$mdBottomSheet','$mdSidenav', '$mdDialog',
  	$scope.menu = [
     {
       link : '',
-      title: 'Dashboard',
+      title: 'HawaiiTrip',
       icon: 'dashboard'
     },
     {
       link : '',
-      title: 'Friends',
+      title: 'MomentsForReals',
       icon: 'group'
     },
     {
       link : '',
-      title: 'Messages',
+      title: 'trueHeading',
       icon: 'message'
     }
   ];
@@ -127,18 +127,16 @@ function DialogController($scope, $mdDialog) {
 //});
 
 app.config(function($mdThemingProvider) {
-  var customBlueMap = 		$mdThemingProvider.extendPalette('light-blue', {
-    'contrastDefaultColor': 'light',
-    'contrastDarkColors': ['50'],
-    '50': 'ffffff'
-  });
-  $mdThemingProvider.definePalette('customBlue', customBlueMap);
   $mdThemingProvider.theme('default')
-    .primaryPalette('customBlue', {
-      'default': '500',
-      'hue-1': '50'
-    })
-    .accentPalette('pink');
-  $mdThemingProvider.theme('input', 'default')
-        .primaryPalette('grey')
+      .primaryPalette('blue-grey', {
+        'default': '400', // by default use shade 400 from the pink palette for primary intentions
+        'hue-1': '100', // use shade 100 for the <code>md-hue-1</code> class
+        'hue-2': '600', // use shade 600 for the <code>md-hue-2</code> class
+        'hue-3': 'A100' // use shade A100 for the <code>md-hue-3</code> class
+      })
+    // If you specify less than all of the keys, it will inherit from the
+    // default shades
+      .accentPalette('orange', {
+        'default': '200' // use shade 200 for default, and keep all other shades the same
+      });
 });
