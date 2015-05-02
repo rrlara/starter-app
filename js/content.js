@@ -14,7 +14,7 @@ app.controller('ContentCtrl', function($scope, $rootScope, $mdSidenav, $mdBottom
     $scope.addToImageClicked = function (item){
         $rootScope.imageClicked = [];
         $rootScope.imageClicked.push(item);
-        console.log("imageClicked", $rootScope.imageClicked);
+        //console.log("imageClicked", $rootScope.imageClicked);
     }
 
     $rootScope.data = {

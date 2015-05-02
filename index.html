@@ -134,7 +134,7 @@
                 ng-repeat="item in data.items">
                   <img src="{{item.attributes.thumbnail._url}}" alt="Smiley face" width="900">
 
-                  <md-grid-tile-footer ng-click="showListBottomSheet($event); addToImageClicked(item)" ng-show="expandImage">
+                  <md-grid-tile-footer ng-click="addToImageClicked(item); showAdd($event)" ng-show="expandImage">
                 <h3>{{item.attributes.comment}}</h3>
                 </md-grid-tile-footer>
                   <md-grid-tile-footer ng-show="!expandImage">
@@ -186,6 +186,8 @@
   <script src="js/index.js"></script>
   <script src="js/content.js"></script>
   <script src="js/map.js"></script>
+
+  <script src="js/DialogController.js"></script>
 
 </body>
 
