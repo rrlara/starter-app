@@ -24,8 +24,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.6578946">
-              <caret line="141" column="40" selection-start-line="139" selection-start-column="18" selection-end-line="141" selection-end-column="40" />
+            <state vertical-scroll-proportion="-5.131579">
+              <caret line="26" column="130" selection-start-line="26" selection-start-column="130" selection-end-line="26" selection-end-column="130" />
               <folding />
             </state>
           </provider>
@@ -54,8 +54,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.87541527">
-              <caret line="63" column="127" selection-start-line="63" selection-start-column="127" selection-end-line="63" selection-end-column="127" />
+            <state vertical-scroll-proportion="0.6013289">
+              <caret line="63" column="142" selection-start-line="63" selection-start-column="142" selection-end-line="63" selection-end-column="142" />
               <folding />
             </state>
           </provider>
@@ -353,10 +353,26 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/map.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/css/mystyle.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.703704">
           <caret line="115" column="1" selection-start-line="112" selection-start-column="0" selection-end-line="115" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.131579">
+          <caret line="26" column="130" selection-start-line="26" selection-start-column="130" selection-end-line="26" selection-end-column="130" />
           <folding />
         </state>
       </provider>
@@ -377,26 +393,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/map.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.6578946">
-          <caret line="141" column="40" selection-start-line="139" selection-start-column="18" selection-end-line="141" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.87541527">
-          <caret line="63" column="127" selection-start-line="63" selection-start-column="127" selection-end-line="63" selection-end-column="127" />
+        <state vertical-scroll-proportion="0.6013289">
+          <caret line="63" column="142" selection-start-line="63" selection-start-column="142" selection-end-line="63" selection-end-column="142" />
           <folding />
         </state>
       </provider>
