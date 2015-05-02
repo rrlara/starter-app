@@ -41,7 +41,7 @@
             <div class="inset">
               <ng-md-icon icon="{{item.icon}}"></ng-md-icon>
             </div>
-            <div class="inset" ng-click="getTable(item.title)">{{item.title}}
+            <div class="inset" ng-click="getTable(item.title); closeLeftNav('left')">{{item.title}}
             </div>
           </md-item-content>
         </a>

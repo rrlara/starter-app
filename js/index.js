@@ -4,6 +4,11 @@ app.controller('AppCtrl', ['$scope', '$mdBottomSheet','$mdSidenav', '$mdDialog',
   $scope.toggleSidenav = function(menuId) {
     $mdSidenav(menuId).toggle();
   };
+
+  $scope.closeLeftNav = function(menuId) {
+    $mdSidenav(menuId).close();
+  };
+
  	$scope.menu = [
     {
       link : '',

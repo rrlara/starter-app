@@ -106,15 +106,16 @@ md-grid-list {
 }
 
 md-bottom-sheet{
-  height: 96% !important;
-  background: rgba(34,34,34,0.55); !important;
+  height: 109% !important;
+  background-color: rgba(34,34,34,0.55); !important;
   overflow: auto;
 }
 md-bottom-sheet.md-default-theme {
-  background-color: rgb(250,250,250);
-  border-top-color: rgb(224,224,224);
+  /*background-color: rgb(250,250,250);*/
+  /*border-top-color: rgb(224,224,224);*/
 }
 
 .inset img{
   margin: auto;
 }
+
