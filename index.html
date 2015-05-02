@@ -134,13 +134,12 @@
                 ng-repeat="item in data.items">
                   <img src="{{item.attributes.thumbnail._url}}" alt="Smiley face" width="900">
 
-                  <md-grid-tile-footer>
+                  <md-grid-tile-footer ng-click="showListBottomSheet($event); addToImageClicked(item)" ng-show="expandImage">
                 <h3>{{item.attributes.comment}}</h3>
-                    <span ng-click="showListBottomSheet($event); addToImageClicked(item)" ng-show="expandImage"><i class="fa fa-arrows-alt" style="
-                        position: absolute;
-                        right: 5px;
-                        top: 5px;"></i></span>
                 </md-grid-tile-footer>
+                  <md-grid-tile-footer ng-show="!expandImage">
+                    <h3>{{item.attributes.comment}}</h3>
+                  </md-grid-tile-footer
                 </md-grid-tile>
               </md-grid-list>
                 </div>
