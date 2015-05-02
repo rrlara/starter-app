@@ -116,41 +116,59 @@
         <ui-view layout="column" layout-fill layout-padding ng-controller="ContentCtrl" class="bgImage">
           <div class="inset" hide-sm></div>
             <ng-switch on="data.selectedIndex" class="tabpanel-container">
-              <div role="tabpanel"
-                   id="tab1-content"
-                   aria-labelledby="tab1"
-                   ng-switch-when="0"
-                   md-swipe-left="next()"
-                   md-swipe-right="previous()"
-                   layout="row" layout-align="center center">
+              <!--<div role="tabpanel"-->
+                   <!--id="tab1-content"-->
+                   <!--aria-labelledby="tab1"-->
+                   <!--ng-switch-when="0"-->
+                   <!--md-swipe-left="next()"-->
+                   <!--md-swipe-right="previous()"-->
+                   <!--layout="row" layout-align="center center">-->
 
-                  <md-card flex-gt-sm="90" flex-gt-md="80" class="bgCardTrans">
-                    <md-progress-circular md-mode="indeterminate" ng-show="loadingMoments" class="progressCircular"></md-progress-circular>
-                    <md-card-content ng-repeat="item in data.items | filter:search">
-                      <md-card flex-gt-sm="90" flex-gt-md="80">
-                      <div class="imageContainer">
-                      <img src="{{item.attributes.thumbnail._url}}" alt="Smiley face" width="400">
-                        <!--<img  ng-if="{{!item.attributes.imageFile._url}}" src="{{item.attributes.imageFile._url}}" alt="Smiley face" width="400">-->
-                      <!--<div class="map-marker transparent" ng-click="getLatLngs(item);showListBottomSheet($event)">-->
-                      <!--<i class="fa fa-map-marker"></i>-->
+                  <!--<md-card flex-gt-sm="90" flex-gt-md="80" class="bgCardTrans">-->
+                    <!--<md-progress-circular md-mode="indeterminate" ng-show="loadingMoments" class="progressCircular"></md-progress-circular>-->
+
+                    <!--<md-card-content ng-repeat="item in data.items | filter:search">-->
+                      <!--<md-card flex-gt-sm="90" flex-gt-md="80">-->
+                      <!--<div class="imageContainer">-->
+                      <!--<img src="{{item.attributes.thumbnail._url}}" alt="Smiley face" width="400">-->
+                        <!--&lt;!&ndash;<img  ng-if="{{!item.attributes.imageFile._url}}" src="{{item.attributes.imageFile._url}}" alt="Smiley face" width="400">&ndash;&gt;-->
+                      <!--&lt;!&ndash;<div class="map-marker transparent" ng-click="getLatLngs(item);showListBottomSheet($event)">&ndash;&gt;-->
+                      <!--&lt;!&ndash;<i class="fa fa-map-marker"></i>&ndash;&gt;-->
+                      <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                      <!--<div class="bottomBand transparentBottom">-->
+                      <!--<span class="md-title">{{item.attributes.comment}}</span>-->
+                      <!--<span class="md-subhead">{{timeFromNow(item.createdAt)}}</span>-->
                       <!--</div>-->
-                      <div class="bottomBand transparentBottom">
-                      <span class="md-title">{{item.attributes.comment}}</span>
-                      <span class="md-subhead">{{timeFromNow(item.createdAt)}}</span>
-                      </div>
-                      </div>
-                      <!--<md-card-content>-->
-                      <!--&lt;!&ndash;<p>&ndash;&gt;-->
-                      <!--&lt;!&ndash;</p>&ndash;&gt;-->
-                      <!--</md-card-content>-->
-                      <!--<md-action-bar layout="row" layout-align="end center">-->
-                      <!--<md-button ng-click="showAlert($event)">Action 1</md-button>-->
-                      <!--</md-action-bar>-->
-                      </md-card>
-                    </md-card-content>
-                  </md-card>
+                      <!--</div>-->
+                      <!--</md-card>-->
+                    <!--</md-card-content>-->
+                  <!--</md-card>-->
+              <!--</div>-->
 
-              </div>
+              <div role="tabpanel"
+              id="tab1-content"
+              aria-labelledby="tab1"
+              ng-switch-when="0"
+              md-swipe-left="next()"
+              md-swipe-right="previous()"
+              layout="row" layout-align="center center">
+
+              <md-grid-list
+                      md-cols-sm="1" md-cols-md="2" md-cols-gt-md="6"
+                      md-row-height-gt-md="2:1" md-row-height="2:1"
+                      md-gutter="12px" md-gutter-gt-sm="5px" >
+                <md-grid-tile class="blue"
+                md-rowspan="2"
+                ng-repeat="item in data.items">
+                  <img src="{{item.attributes.thumbnail._url}}" alt="Smiley face" width="900">
+
+                  <md-grid-tile-footer>
+                <h3>{{item.attributes.comment}}</h3>
+                </md-grid-tile-footer>
+                </md-grid-tile>
+              </md-grid-list>
+                </div>
+
               <div role="tabpanel"
                    id="tab2-content"
                    aria-labelledby="tab2"
