@@ -152,7 +152,7 @@
               md-swipe-left="next()"
               md-swipe-right="previous()"
               layout="row" layout-align="center center">
-
+                <md-progress-linear md-mode="indeterminate" ng-show="loadingMoments"></md-progress-linear>
               <md-grid-list
                       md-cols-sm="1" md-cols-md="2" md-cols-gt-md="6"
                       md-row-height-gt-md="2:1" md-row-height="2:1"
