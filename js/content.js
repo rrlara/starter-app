@@ -17,17 +17,6 @@ app.controller('ContentCtrl', function($scope, $rootScope, $mdSidenav, $mdBottom
         console.log("imageClicked", $rootScope.imageClicked);
     }
 
-    //$scope.showListBottomSheet = function($event) {
-    //    $scope.alert = '';
-    //    $mdBottomSheet.show({
-    //        templateUrl: 'bottom-sheet-list-template.html',
-    //        controller: 'ListBottomSheetCtrl',
-    //        targetEvent: $event
-    //    }).then(function(clickedItem) {
-    //        $scope.alert = clickedItem.name + ' clicked!';
-    //    });
-    //};
-
     $rootScope.data = {
         items: [],
         total: 0

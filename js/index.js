@@ -1,6 +1,6 @@
 var app = angular.module('LeapSpot', ['ngMaterial', 'ngMdIcons', 'angularParse']);
 
-app.controller('AppCtrl', ['$scope', '$mdBottomSheet','$mdSidenav', '$mdDialog', function($scope, $mdBottomSheet, $mdSidenav, $mdDialog){
+app.controller('AppCtrl', ['$scope', '$mdBottomSheet','$mdSidenav', '$mdDialog','$mdMedia', function($scope, $mdBottomSheet, $mdSidenav, $mdDialog, $mdMedia){
   $scope.toggleSidenav = function(menuId) {
     $mdSidenav(menuId).toggle();
   };
@@ -27,12 +27,13 @@ app.controller('AppCtrl', ['$scope', '$mdBottomSheet','$mdSidenav', '$mdDialog',
       }
   ];
 
+  $scope.expandImage = $mdMedia('min-width: 960px');
+
 
   $scope.alert = '';
   $scope.showListBottomSheet = function($event) {
-    $scope.alert = '';
     $mdBottomSheet.show({
-      template: '<md-bottom-sheet class="md-list md-has-header"> <md-subheader>Settings</md-subheader><md-item-content md-ink-ripple flex class="inset"><img src="{{imageClicked[0].attributes.imageFile._url}}" alt="" width="900"></md-item-content></md-bottom-sheet>',
+      template: '<md-bottom-sheet class="md-list md-has-header"><md-item-content flex class="inset"><img src="{{imageClicked[0].attributes.imageFile._url}}" alt="" height="600"></md-item-content></md-bottom-sheet>',
       controller: 'ListBottomSheetCtrl',
       targetEvent: $event
     }).then(function(clickedItem) {
