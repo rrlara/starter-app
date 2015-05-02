@@ -104,3 +104,12 @@ md-grid-list {
   display: block;
   position: static;
 }
+
+md-bottom-sheet{
+  height: 96% !important;
+  background: rgba(34,34,34,0.55); !important;
+}
+md-bottom-sheet.md-default-theme {
+  background-color: rgb(250,250,250);
+  border-top-color: rgb(224,224,224);
+}

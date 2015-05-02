@@ -11,6 +11,12 @@ app.controller('ContentCtrl', function($scope, $rootScope, $mdSidenav, $mdBottom
         $mdSidenav(menuId).toggle();
     };
 
+    $scope.addToImageClicked = function (item){
+        $rootScope.imageClicked = [];
+        $rootScope.imageClicked.push(item);
+        console.log("imageClicked", $rootScope.imageClicked);
+    }
+
     //$scope.showListBottomSheet = function($event) {
     //    $scope.alert = '';
     //    $mdBottomSheet.show({
