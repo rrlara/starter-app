@@ -46,3 +46,27 @@ md-default-theme{
   /*background:rgba(255,255,255,0.5);*/
   background:rgba(0,0,0,.15);
 }
+
+.bottomBand{
+  width: 100%;
+  height: 60px;
+  position: relative;
+  bottom: 63px;
+  z-index: 10
+}
+.transparentBottom{
+  /*background:rgba(255,255,255,0.5);*/
+  background:rgba(0,0,0,.5);
+}
+.bottomBand .md-title{
+  color: #ffffff;
+  font-size: 16px;
+}
+.bottomBand .md-subhead{
+  color: #ffffff;
+}
+
+#map{
+  width: 835px;
+  height: 535px;
+}

@@ -19,7 +19,12 @@ app.controller('AppCtrl', ['$scope', '$mdBottomSheet','$mdSidenav', '$mdDialog',
       link : '',
       title: 'trueHeading',
       icon: 'message'
-    }
+    },
+      {
+        link : '',
+        title: 'Moment',
+        icon: 'message'
+      }
   ];
   //$scope.admin = [
   //  {

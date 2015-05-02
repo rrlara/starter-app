@@ -11,15 +11,6 @@ app.controller('ContentCtrl', function($scope, $rootScope, $mdSidenav, $mdBottom
         $mdSidenav(menuId).toggle();
     };
 
-    //$scope.onSwipeLeft = function (){
-    //    $mdSidenav()
-    //        .close()
-    //        .then(function(){
-    //            $log.debug('closed');
-    //        });
-    //};
-
-
     //$scope.showListBottomSheet = function($event) {
     //    $scope.alert = '';
     //    $mdBottomSheet.show({
