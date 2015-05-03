@@ -12,10 +12,15 @@ app.controller('AppCtrl', ['$scope', '$mdBottomSheet','$mdSidenav', '$mdDialog',
  	$scope.menu = [
     {
       link : '',
-      title: 'HawaiiTrip',
+      title: 'washingtondc',
       icon: 'dashboard'
     },
     {
+      link : '',
+      title: 'HawaiiTrip',
+      icon: 'dashboard'
+    },
+      {
       link : '',
       title: 'MomentsForReals',
       icon: 'group'
