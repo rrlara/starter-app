@@ -1,0 +1,35 @@
+############## generic files to ignore #######
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
+
+############## Mac Stuff #####################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+############## Jetbrains Stuff ###############
+*.iws
+workspace.xml
+tasks.xml
+*.iml
+.idea/
+
+############## Visual Studio Stuff ###############
+*.tmp
+.ntvs_analysis.dat
+*.suo
+*.sln
+*.njsproj
+./bin/*
+./obj/*
+bin/*
+obj/*
+############## Browserify ###############
+Application/dist/*
