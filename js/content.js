@@ -29,7 +29,7 @@ app.controller('ContentCtrl', function($scope, $rootScope, $mdSidenav, $mdBottom
 
         $scope.loadingMoments = true;
 
-        var query = parseQuery.new('washingtondc');
+        var query = parseQuery.new('HawaiiTrip');
 
         query.limit(1000);
         query.descending("createAt");
@@ -37,9 +37,7 @@ app.controller('ContentCtrl', function($scope, $rootScope, $mdSidenav, $mdBottom
         parseQuery.find(query)
             .then(function(results) {
                 $scope.loadingMoments = false;
-                    $scope.data.items = results;
-                //console.log(results);
-                // nested promise :)
+                $rootScope.data.items = results;
             }, function(error) {
                 $scope.loadingMoments = false;
                     alert(JSON.stringify(error));
@@ -68,7 +66,7 @@ app.controller('ContentCtrl', function($scope, $rootScope, $mdSidenav, $mdBottom
         parseQuery.find(query)
             .then(function(results) {
                 $scope.loadingMoments = false;
-                $scope.data.items = results;
+                $rootScope.data.items = results;
             }, function(error) {
                 $scope.loadingMoments = false;
                 alert(JSON.stringify(error));
