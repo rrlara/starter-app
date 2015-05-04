@@ -13,8 +13,8 @@ app.controller('MapCtrl', ['$scope', function($scope, $window){
 
         var map = L.map('map', {
             invalidateSize: true
-        }).setView([51.505, -0.09], 13);
-        L.tileLayer('https://{s}.tiles.mapbox.com/v3/americanredcross.hcji22de/{z}/{x}/{y}.png').addTo(map);
+        }).setView([47.6033068, -122.3077322], 10);
+        L.tileLayer('http://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}').addTo(map);
 
 
     L.Util.requestAnimFrame(map.invalidateSize,map,!1,map._container);

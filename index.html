@@ -9,7 +9,7 @@
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
 
   <title>Leap Spot</title>
-
+  <link rel="stylesheet" href="css/leaflet.css">
     <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
@@ -151,12 +151,13 @@
                    md-swipe-left="next()"
                    md-swipe-right="previous()" 
                    layout="row" layout-align="center center"
-                   class="mapContainer">
+                   class="mapContainer"
+                      ng-controller="MapCtrl">
                   <md-card flex-gt-sm="90" flex-gt-md="80">
                     <!--<md-card-content>-->
                       <!-- -->
                     <!--</md-card-content>-->
-                    <!--<div id="map"></div>-->
+                    <div id="map"></div>
                   </md-card>
               </div>
 

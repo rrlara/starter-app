@@ -77,9 +77,17 @@ md-progress-linear {
   color: #ffffff;
 }
 
-#map{
-  width: 835px;
-  height: 535px;
+/*#map{*/
+  /*width: 835px;*/
+  /*height: 535px;*/
+/*}*/
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0px;
+  left: 0px;
+  cursor: cell;
 }
 
 
