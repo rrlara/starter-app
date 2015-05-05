@@ -19,11 +19,11 @@ app.controller('PhoneStateCtrl', function($scope, $rootScope, $element, $window)
     //
     //};
     //
-    //$scope.$watch($scope.getWindowOrientation, function (newValue, oldValue) {
-    //    $scope.degrees = newValue;
-    //    console.log($scope.degrees);
-    //}, true);
-    //
+    $scope.$watch($scope.getWindowOrientation, function (newValue, oldValue) {
+        $scope.degrees = newValue;
+        console.log($scope.degrees);
+    }, true);
+
     //angular.element($window).bind('orientationchange', function () {
     //    $scope.$apply();
     //});
@@ -42,23 +42,27 @@ app.controller('PhoneStateCtrl', function($scope, $rootScope, $element, $window)
             var dir = eventData.alpha;
 
             // call our orientation event handler
-            deviceOrientationHandler(tiltLR, tiltFB, dir);
+            $scope.deviceOrientationHandler(tiltLR, tiltFB, dir);
         }, false);
     } else {
         alert("Not supported on your device or browser.  Sorry.");
     }
 
 
-    function deviceOrientationHandler(tiltLR, tiltFB, dir) {
+    //function deviceOrientationHandler(tiltLR, tiltFB, dir) {
+    //
+    //    $scope.degrees = dir;
+    //
+    //    //// Apply the transform to the image
+    //    //var face = document.getElementById("cover");
+    //    //face.style.webkitTransform = "rotate(" + tiltLR + "deg) rotate3d(1,0,0, " + (tiltFB * -1) + "deg)";
+    //    //face.style.MozTransform = "rotate(" + tiltLR + "deg)";
+    //    //face.style.transform = "rotate(" + tiltLR + "deg) rotate3d(1,0,0, " + (tiltFB * -1) + "deg)";
+    //
+    //}
 
-        $scope.degrees = dir;
-
-        //// Apply the transform to the image
-        //var face = document.getElementById("cover");
-        //face.style.webkitTransform = "rotate(" + tiltLR + "deg) rotate3d(1,0,0, " + (tiltFB * -1) + "deg)";
-        //face.style.MozTransform = "rotate(" + tiltLR + "deg)";
-        //face.style.transform = "rotate(" + tiltLR + "deg) rotate3d(1,0,0, " + (tiltFB * -1) + "deg)";
-
+    $scope.deviceOrientationHandler = function (tiltLR, tiltFB, dir) {
+        return dir;
     }
 
 
