@@ -5,17 +5,17 @@
 
 app.controller('PhoneStateCtrl', function($scope, $rootScope, $element, $window){
 
-    //$scope.getWindowOrientation = function () {
-    //    return $window.orientation;
-    //};
-    //
-    //$scope.$watch($scope.getWindowOrientation, function (newValue, oldValue) {
-    //    $scope.degrees = newValue;
-    //}, true);
-    //
-    //angular.element($window).bind('orientationchange', function () {
-    //    $scope.$apply();
-    //});
+    $scope.getWindowOrientation = function () {
+        return $window.orientation;
+    };
+
+    $scope.$watch($scope.getWindowOrientation, function (newValue, oldValue) {
+        $scope.degrees = newValue;
+    }, true);
+
+    angular.element($window).bind('orientationchange', function () {
+        $scope.$apply();
+    });
 
 
 });
