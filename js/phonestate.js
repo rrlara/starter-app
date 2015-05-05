@@ -5,50 +5,50 @@
 
 app.controller('PhoneStateCtrl', function($scope, $rootScope, $element, $window){
 
-    //$scope.getWindowOrientation = function () {
-    //    return $window.orientation;
-    //};
+    $scope.getWindowOrientation = function () {
+        return $window.DeviceOrientationEvent;
+    };
+
+    $scope.$watch($scope.getWindowOrientation, function (newValue, oldValue) {
+        $scope.degrees = newValue;
+    }, true);
+
+    angular.element($window).bind('orientationchange', function () {
+        $scope.$apply();
+    });
+
+    //if ($window.DeviceOrientationEvent) {
     //
-    //$scope.$watch($scope.getWindowOrientation, function (newValue, oldValue) {
-    //    $scope.degrees = newValue;
-    //}, true);
+    //    // Listen for the deviceorientation event and handle the raw data
+    //    $window.addEventListener('deviceorientation', function (eventData) {
+    //        // gamma is the left-to-right tilt in degrees, where right is positive
+    //        var tiltLR = eventData.gamma;
     //
-    //angular.element($window).bind('orientationchange', function () {
-    //    $scope.$apply();
-    //});
-
-    if ($window.DeviceOrientationEvent) {
-
-        // Listen for the deviceorientation event and handle the raw data
-        $window.addEventListener('deviceorientation', function (eventData) {
-            // gamma is the left-to-right tilt in degrees, where right is positive
-            var tiltLR = eventData.gamma;
-
-            // beta is the front-to-back tilt in degrees, where front is positive
-            var tiltFB = eventData.beta;
-
-            // alpha is the compass direction the device is facing in degrees
-            var dir = eventData.alpha;
-
-            // call our orientation event handler
-            deviceOrientationHandler(tiltLR, tiltFB, dir);
-        }, false);
-    } else {
-        alert("Not supported on your device or browser.  Sorry.");
-    }
-
-
-    function deviceOrientationHandler(tiltLR, tiltFB, dir) {
-
-        $scope.degrees = dir;
-
-        //// Apply the transform to the image
-        //var face = document.getElementById("cover");
-        //face.style.webkitTransform = "rotate(" + tiltLR + "deg) rotate3d(1,0,0, " + (tiltFB * -1) + "deg)";
-        //face.style.MozTransform = "rotate(" + tiltLR + "deg)";
-        //face.style.transform = "rotate(" + tiltLR + "deg) rotate3d(1,0,0, " + (tiltFB * -1) + "deg)";
-
-    }
+    //        // beta is the front-to-back tilt in degrees, where front is positive
+    //        var tiltFB = eventData.beta;
+    //
+    //        // alpha is the compass direction the device is facing in degrees
+    //        var dir = eventData.alpha;
+    //
+    //        // call our orientation event handler
+    //        deviceOrientationHandler(tiltLR, tiltFB, dir);
+    //    }, false);
+    //} else {
+    //    alert("Not supported on your device or browser.  Sorry.");
+    //}
+    //
+    //
+    //function deviceOrientationHandler(tiltLR, tiltFB, dir) {
+    //
+    //    $scope.degrees = dir;
+    //
+    //    //// Apply the transform to the image
+    //    //var face = document.getElementById("cover");
+    //    //face.style.webkitTransform = "rotate(" + tiltLR + "deg) rotate3d(1,0,0, " + (tiltFB * -1) + "deg)";
+    //    //face.style.MozTransform = "rotate(" + tiltLR + "deg)";
+    //    //face.style.transform = "rotate(" + tiltLR + "deg) rotate3d(1,0,0, " + (tiltFB * -1) + "deg)";
+    //
+    //}
 
 
 });
