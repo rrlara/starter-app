@@ -66,9 +66,13 @@
       <file leaf-file-name="phonestate.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/phonestate.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.07165605">
-              <caret line="5" column="79" selection-start-line="5" selection-start-column="79" selection-end-line="5" selection-end-column="79" />
-              <folding />
+            <state vertical-scroll-proportion="0.8121019">
+              <caret line="45" column="7" selection-start-line="27" selection-start-column="6" selection-end-line="45" selection-end-column="7" />
+              <folding>
+                <marker date="1430869797000" expanded="true" signature="820:1523" placeholder="{...}" />
+                <marker date="1430869797000" expanded="true" signature="982:1506" placeholder="{...}" />
+                <marker date="1430869797000" expanded="true" signature="1529:1607" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -469,9 +473,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/phonestate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07165605">
-          <caret line="5" column="79" selection-start-line="5" selection-start-column="79" selection-end-line="5" selection-end-column="79" />
-          <folding />
+        <state vertical-scroll-proportion="0.8121019">
+          <caret line="45" column="7" selection-start-line="27" selection-start-column="6" selection-end-line="45" selection-end-column="7" />
+          <folding>
+            <marker date="1430869797000" expanded="true" signature="820:1523" placeholder="{...}" />
+            <marker date="1430869797000" expanded="true" signature="982:1506" placeholder="{...}" />
+            <marker date="1430869797000" expanded="true" signature="1529:1607" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>

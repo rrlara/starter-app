@@ -6,7 +6,15 @@
 app.controller('PhoneStateCtrl', function($scope, $rootScope, $element, $window){
 
     $scope.getWindowOrientation = function () {
-        return $window.DeviceOrientationEvent;
+        //return $window.DeviceOrientationEvent;
+        $window.addEventListener('deviceorientation', function (eventData) {
+
+            // alpha is the compass direction the device is facing in degrees
+            var dir = eventData.alpha;
+
+            // call our orientation event handler
+            deviceOrientationHandler(dir);
+        }, false);
     };
 
     $scope.$watch($scope.getWindowOrientation, function (newValue, oldValue) {
