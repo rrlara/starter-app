@@ -90,6 +90,10 @@ md-progress-linear {
   cursor: cell;
 }
 
+.highlight{
+  border: 2px darkorange solid;
+}
+
 
 .gridListdemoBasicUsage md-grid-list {
   margin: 8px; }

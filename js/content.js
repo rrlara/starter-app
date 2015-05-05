@@ -38,6 +38,8 @@ app.controller('ContentCtrl', function($scope, $rootScope, $mdSidenav, $mdBottom
             .then(function(results) {
                 $scope.loadingMoments = false;
                 $rootScope.data.items = results;
+
+                addPropertiesToModal($rootScope.data.items);
             }, function(error) {
                 $scope.loadingMoments = false;
                     alert(JSON.stringify(error));
@@ -67,6 +69,7 @@ app.controller('ContentCtrl', function($scope, $rootScope, $mdSidenav, $mdBottom
             .then(function(results) {
                 $scope.loadingMoments = false;
                 $rootScope.data.items = results;
+                addPropertiesToModal($rootScope.data.items);
             }, function(error) {
                 $scope.loadingMoments = false;
                 alert(JSON.stringify(error));
@@ -74,6 +77,36 @@ app.controller('ContentCtrl', function($scope, $rootScope, $mdSidenav, $mdBottom
 
 
     };
+
+    function addPropertiesToModal(data){
+        for (var moment in data){
+            var momentData = data[moment];
+
+            momentData["active"] = false;
+        }
+    }
+
+    $scope.activeMoment = function(id, data){
+        for (var moment in data){
+            var momentData = data[moment];
+            momentData["active"] = false;
+            if (momentData.id == id){
+                momentData["active"] = true;
+
+                $rootScope.activeMomentMaker = momentData;
+            }
+        }
+
+        //for (var moment in data){
+        //    var momentData = data[moment];
+        //
+        //    if (momentData.id = id){
+        //        momentData["active"] = true;
+        //    }
+        //
+        //}
+
+    }
 
 
 
