@@ -27,9 +27,10 @@
     <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
       <md-toolbar class="md-tall md-hue-2">
         <span flex></span>
-        <div layout="column" class="md-toolbar-tools-bottom inset">
+        <div layout="column" class="md-toolbar-tools-bottom inset" ng-controller="PhoneStateCtrl">
           <user-avatar></user-avatar>
           <span></span>
+          <div>Degrees: {{degrees}}</div>
           <div>Rene Rodriguez</div>
           <div>rrlara@gmail.com</div>
         </div>
@@ -109,7 +110,6 @@
             <ng-md-icon icon="more_vert"></ng-md-icon>
           </md-button>
         </div>
-
       </md-toolbar>
       <md-content flex md-scroll-y>
         <!--<div id="map"></div>-->
@@ -132,7 +132,7 @@
                 <md-grid-tile class="blue"
                 md-rowspan="2"
                 ng-repeat="item in data.items"
-                        ng-click="activeMoment(item.id, data.items)" ng-class="{highlight: item.active}">
+                        ng-click="activeMoment(item.id, data.items); demoCtrl.$showSource = !demoCtrl.$showSource" ng-class="{highlight: item.active}">
                   <img src="{{item.attributes.thumbnail._url}}" alt="Smiley face" width="900">
                   <div class=""></div>
                   <md-grid-tile-footer ng-click="addToImageClicked(item); showAdd($event)" ng-show="expandImage">
@@ -142,6 +142,11 @@
                     <h3>{{item.attributes.comment}}</h3>
                   </md-grid-tile-footer>
                 </md-grid-tile>
+
+                <md-tabs class="demo-source-tabs ng-isolate-scope md-default-theme" ng-show="demoCtrl.$showSource"
+                         style="min-height: 20px;" aria-hidden="false">
+                </md-tabs>
+
               </md-grid-list>
                 </div>
 
@@ -186,6 +191,7 @@
 </html>
 
   <script src="js/index.js"></script>
+  <script src="js/phonestate.js"></script>
   <script src="js/content.js"></script>
   <script src="js/map.js"></script>
 

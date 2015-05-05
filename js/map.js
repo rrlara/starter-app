@@ -84,8 +84,8 @@ app.controller('MapCtrl', ['$scope','$rootScope', function($scope, $rootScope){
 
             marker = L.rotatedMarker(new L.LatLng(latitude, longitude), {
                 icon: L.icon({
-                    iconUrl: 'css/img/view@2x.png',
-                    iconSize: [30, 30],
+                    iconUrl: 'css/img/marker-copy.png',
+                    iconSize: [114, 114],
                 })
 
             });
