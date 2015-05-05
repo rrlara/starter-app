@@ -11,7 +11,11 @@ app.controller('MapCtrl', ['$scope','$rootScope', function($scope, $rootScope){
     var map = L.map('map', {
         invalidateSize: true
     }).setView([47.6033068, -122.3077322], 10);
-    L.tileLayer('http://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}').addTo(map);
+    var basemapUrl = 'http://{s}.tiles.mapbox.com/v3/spatialdev.map-4o51gab2/{z}/{x}/{y}.png';
+    basemapLayer = L.tileLayer(basemapUrl,{
+        detectRetina: true
+    });
+    basemapLayer.addTo(map);
 
 
     L.Util.requestAnimFrame(map.invalidateSize,map,!1,map._container);
@@ -96,7 +100,7 @@ app.controller('MapCtrl', ['$scope','$rootScope', function($scope, $rootScope){
 
 //            mapObject.addLayer(marker);
 
-            map.setView(new L.LatLng(latitude, longitude), 15);
+            map.setView(new L.LatLng(latitude, longitude), 14);
         map.addLayer(markers);
         }
 
