@@ -26,24 +26,27 @@ app.controller('PhoneStateCtrl', function($scope, $rootScope, $element, $window)
     //    $scope.$apply();
     //});
 
-    if ($window.DeviceOrientationEvent) {
+    $scope.getWindowOrientation = function () {
 
-        // Listen for the deviceorientation event and handle the raw data
-        $window.addEventListener('deviceorientation', function (eventData) {
-            // gamma is the left-to-right tilt in degrees, where right is positive
-            var tiltLR = eventData.gamma;
+        if ($window.DeviceOrientationEvent) {
 
-            // beta is the front-to-back tilt in degrees, where front is positive
-            var tiltFB = eventData.beta;
+            // Listen for the deviceorientation event and handle the raw data
+            $window.addEventListener('deviceorientation', function (eventData) {
+                // gamma is the left-to-right tilt in degrees, where right is positive
+                var tiltLR = eventData.gamma;
 
-            // alpha is the compass direction the device is facing in degrees
-            var dir = eventData.alpha;
+                // beta is the front-to-back tilt in degrees, where front is positive
+                var tiltFB = eventData.beta;
 
-            // call our orientation event handler
-            deviceOrientationHandler(tiltLR, tiltFB, dir);
-        }, false);
-    } else {
-        alert("Not supported on your device or browser.  Sorry.");
+                // alpha is the compass direction the device is facing in degrees
+                var dir = eventData.alpha;
+
+                // call our orientation event handler
+                deviceOrientationHandler(tiltLR, tiltFB, dir);
+            }, false);
+        } else {
+            alert("Not supported on your device or browser.  Sorry.");
+        }
     }
 
 
@@ -51,13 +54,12 @@ app.controller('PhoneStateCtrl', function($scope, $rootScope, $element, $window)
 
         $scope.degrees = dir;
 
-        //// Apply the transform to the image
-        //var face = document.getElementById("cover");
-        //face.style.webkitTransform = "rotate(" + tiltLR + "deg) rotate3d(1,0,0, " + (tiltFB * -1) + "deg)";
-        //face.style.MozTransform = "rotate(" + tiltLR + "deg)";
-        //face.style.transform = "rotate(" + tiltLR + "deg) rotate3d(1,0,0, " + (tiltFB * -1) + "deg)";
-
     }
+
+    $scope.$watch($scope.getWindowOrientation, function (newValue, oldValue) {
+            $scope.degrees = newValue;
+            console.log('$scope.degrees', $scope.degrees);
+        }, true);
 
 
 });
