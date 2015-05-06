@@ -13,15 +13,13 @@ app.controller('PhoneStateCtrl', function($scope, $rootScope, $element, $window)
     //        var dir = eventData.alpha;
     //
     //        // call our orientation event handler
-    //        //deviceOrientationHandler(dir);
-    //        return dir;
+    //        deviceOrientationHandler(dir);
     //    }, false);
-    //
     //};
     //
     //$scope.$watch($scope.getWindowOrientation, function (newValue, oldValue) {
     //    $scope.degrees = newValue;
-    //    console.log($scope.degrees);
+    //    conso
     //}, true);
     //
     //angular.element($window).bind('orientationchange', function () {
