@@ -56,10 +56,10 @@ app.controller('PhoneStateCtrl', function($scope, $rootScope, $element, $window)
 
     }
 
-    $scope.$watch('getWindowOrientation', function (newValue, oldValue) {
+    $scope.$watch($scope.getWindowOrientation, function (newValue, oldValue) {
             $scope.degrees = newValue;
             console.log('$scope.degrees', $scope.degrees);
-        }, true);
+        }, false);
 
 
 });
