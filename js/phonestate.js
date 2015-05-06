@@ -52,8 +52,7 @@ app.controller('PhoneStateCtrl', function($scope, $rootScope, $element, $window)
 
     function deviceOrientationHandler(tiltLR, tiltFB, dir) {
 
-        //$scope.degrees = dir;
-        return dir;
+        $scope.degrees = dir;
 
     }
 
