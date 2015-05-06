@@ -42,8 +42,7 @@ app.controller('PhoneStateCtrl', function($scope, $rootScope, $element, $window)
                 var dir = eventData.alpha;
 
                 // call our orientation event handler
-                //deviceOrientationHandler(tiltLR, tiltFB, dir);
-                return dir;
+                deviceOrientationHandler(tiltLR, tiltFB, dir);
             }, false);
         } else {
             alert("Not supported on your device or browser.  Sorry.");
