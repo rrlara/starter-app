@@ -21,14 +21,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5507246">
-              <caret line="67" column="128" selection-start-line="67" selection-start-column="128" selection-end-line="67" selection-end-column="128" />
+            <state vertical-scroll-proportion="-2.9809523">
+              <caret line="64" column="92" selection-start-line="64" selection-start-column="92" selection-end-line="64" selection-end-column="92" />
               <folding>
                 <element signature="n#style#0;n#md-tabs#0;n#md-grid-list#0;n#div#0;n#ng-switch#0;n#ui-view#0;n#md-content#0;n#div#0;n#body#0;n#html#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="camera.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/camera.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.8121019">
+              <caret line="34" column="122" selection-start-line="34" selection-start-column="122" selection-end-line="34" selection-end-column="122" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -57,7 +67,7 @@
         <entry file="file://$PROJECT_DIR$/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="65" column="16" selection-start-line="65" selection-start-column="9" selection-end-line="65" selection-end-column="16" />
+              <caret line="105" column="2" selection-start-line="95" selection-start-column="0" selection-end-line="105" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -97,6 +107,7 @@
         <option value="$PROJECT_DIR$/js/DialogController.js" />
         <option value="$PROJECT_DIR$/js/index.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/camera.js" />
       </list>
     </option>
   </component>
@@ -441,14 +452,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/DialogController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="0" selection-start-line="11" selection-start-column="4" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/content.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.8888888">
@@ -460,18 +463,34 @@
     <entry file="file://$PROJECT_DIR$/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="65" column="16" selection-start-line="65" selection-start-column="9" selection-end-line="65" selection-end-column="16" />
+          <caret line="105" column="2" selection-start-line="95" selection-start-column="0" selection-end-line="105" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/DialogController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="0" selection-start-line="11" selection-start-column="4" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5507246">
-          <caret line="67" column="128" selection-start-line="67" selection-start-column="128" selection-end-line="67" selection-end-column="128" />
+        <state vertical-scroll-proportion="-2.9809523">
+          <caret line="64" column="92" selection-start-line="64" selection-start-column="92" selection-end-line="64" selection-end-column="92" />
           <folding>
             <element signature="n#style#0;n#md-tabs#0;n#md-grid-list#0;n#div#0;n#ng-switch#0;n#ui-view#0;n#md-content#0;n#div#0;n#body#0;n#html#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/camera.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8121019">
+          <caret line="34" column="122" selection-start-line="34" selection-start-column="122" selection-end-line="34" selection-end-column="122" />
+          <folding />
         </state>
       </provider>
     </entry>

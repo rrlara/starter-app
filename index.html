@@ -62,10 +62,10 @@
       </md-item>
     </md-list>
     </md-sidenav>
-    <div layout="column" class="relative" layout-fill role="main">
-      <md-button class="md-fab md-fab-bottom-right" aria-label="Add" ng-click="">
-        <ng-md-icon icon="add"></ng-md-icon>
-        <input type="file" name="fileToUpload" id="fileToUpload" onchange="fileSelected();" accept="image/*" capture="camera" />
+    <div layout="column" class="relative" layout-fill role="main" ng-controller="CameraCtrl">
+      <md-button class="md-fab md-fab-bottom-right" aria-label="Add">
+        <!--<ng-md-icon icon="add"></ng-md-icon>-->
+        <input type="file" name="file" onchange="angular.element(this).scope().photoChanged(this.files)" />
       </md-button>
       <md-toolbar ng-show="!showSearch">
         <div class="md-toolbar-tools">
@@ -193,6 +193,7 @@
 
   <script src="js/index.js"></script>
   <script src="js/phonestate.js"></script>
+  <script src="js/camera.js"></script>
   <script src="js/content.js"></script>
   <script src="js/map.js"></script>
 
