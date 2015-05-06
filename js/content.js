@@ -87,25 +87,15 @@ app.controller('ContentCtrl', function($scope, $rootScope, $mdSidenav, $mdBottom
     }
 
     $scope.activeMoment = function(id, data){
-        for (var moment in data){
+        for (var moment in data) {
             var momentData = data[moment];
             momentData["active"] = false;
-            if (momentData.id == id){
+            if (momentData.id == id) {
                 momentData["active"] = true;
 
                 $rootScope.activeMomentMaker = momentData;
             }
         }
-
-        //for (var moment in data){
-        //    var momentData = data[moment];
-        //
-        //    if (momentData.id = id){
-        //        momentData["active"] = true;
-        //    }
-        //
-        //}
-
     }
 
 
