@@ -74,8 +74,8 @@ app.controller('CameraCtrl', function($scope, $rootScope, $mdDialog, $timeout){
 
 
             userDataEntry.altitude = '';
-            userDataEntry.latitude = $scope.latitude;
-            userDataEntry.longitude = $scope.longitude;
+            userDataEntry.latitude = ($scope.latitude).toString();
+            userDataEntry.longitude = ($scope.longitude).toString();
             userDataEntry.comment = comment;
             userDataEntry.imageFile = parseFile1;
             userDataEntry.trueHeading = '';
