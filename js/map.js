@@ -23,9 +23,6 @@ app.controller('MapCtrl', ['$scope','$rootScope', function($scope, $rootScope){
 
     map.invalidateSize();
 
-    var mapation = map.getContainer();
-    console.log(mapation);
-
     var sightingReports = $rootScope.activeMomentMaker;
 
     if ($rootScope.activeMomentMaker){

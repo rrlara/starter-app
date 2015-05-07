@@ -16,16 +16,18 @@ app.controller('CameraCtrl', function($scope, $rootScope, $mdDialog, $timeout){
     $scope.fileReaderSupported = window.FileReader != null;
     $scope.photoChanged = function(files){
         console.log(files);
+
         $scope.imageFile = files[0];
+
         if (files != null) {
             var file = files[0];
+
             if ($scope.fileReaderSupported && file.type.indexOf('image') > -1) {
                 $timeout(function() {
                     var fileReader = new FileReader();
                     fileReader.readAsDataURL(file);
                     fileReader.onload = function(e) {
                         $timeout(function(){
-
                             $scope.thumbnail.dataUrl = e.target.result;
                             $scope.showCameraPreview();
                         });
@@ -35,10 +37,16 @@ app.controller('CameraCtrl', function($scope, $rootScope, $mdDialog, $timeout){
         }
     };
 
+
     $scope.showCameraPreview = function(ev) {
         $mdDialog.show({
             controller: DialogController,
-            template: '<md-dialog aria-label="Mango (Fruit)"> <md-content class="md-padding"> <img height="200" width="200" ng-src="' + $scope.thumbnail.dataUrl + '"/><form name="userForm"> <md-input-container flex> <label>Biography</label> <textarea ng-model="comment" columns="1" md-maxlength="150"></textarea> </md-input-container> </form> </md-content> <div class="md-actions" layout="row"> <span flex></span> <md-button ng-click="answer(\'not useful\')"> Cancel </md-button> <md-button ng-click="answer()" class="md-primary"> Save </md-button> </div></md-dialog>',
+            template: '<md-dialog aria-label="Mango (Fruit)"> <md-content class="md-padding">' +
+            '<img height="200" width="200" ng-src="' + $scope.thumbnail.dataUrl + '"/>' + '<canvas id="canvas" width="200" height="200" class="playable-canvas"></canvas>' +
+            '<form name="userForm"> <md-input-container flex> <label>Biography</label> <textarea ng-model="comment" columns="1" md-maxlength="150"></textarea> ' +
+            '</md-input-container> </form> </md-content> <div class="md-actions" layout="row"> <span flex></span> ' +
+            '<md-button ng-click="cancel()"> Cancel </md-button> ' +
+            '<md-button ng-click="answer()" class="md-primary"> Save </md-button> </div></md-dialog>',
             targetEvent: ev
         })
             .then(function(answer) {
@@ -51,19 +59,20 @@ app.controller('CameraCtrl', function($scope, $rootScope, $mdDialog, $timeout){
     function DialogController($scope, $mdDialog) {
         $scope.hide = function() {
             $mdDialog.hide();
+
         };
         $scope.cancel = function() {
             $mdDialog.cancel();
         };
         $scope.answer = function(answer) {
-            uploadData($scope.comment);
-            $mdDialog.hide(answer);
+            uploadData($scope.comment, $mdDialog);
+            //$mdDialog.hide(answer);
             console.log($scope.comment);
 
         };
     };
 
-    function uploadData (comment){
+    function uploadData (comment, closeDialog){
         var userDataEntry = {};
             //create photo 1 as a parse file
             var parseFile1 = null;
@@ -81,10 +90,10 @@ app.controller('CameraCtrl', function($scope, $rootScope, $mdDialog, $timeout){
             userDataEntry.trueHeading = '';
             userDataEntry.thumbnail = parseFile1;
 
-        saveToParse(userDataEntry);
+        saveToParse(userDataEntry, closeDialog);
     }
 
-    function saveToParse(obj){
+    function saveToParse(obj,closeDialog){
         var GameScore = Parse.Object.extend("washingtondc");
         var gameScore = new GameScore();
 
@@ -99,7 +108,9 @@ app.controller('CameraCtrl', function($scope, $rootScope, $mdDialog, $timeout){
         gameScore.save(null, {
             success: function(gameScore) {
                 // Execute any logic that should take place after the object is saved.
-                alert('New object created with objectId: ' + gameScore.id);
+                //alert('New object created with objectId: ' + gameScore.id);
+
+                closeDialog.hide();
             },
             error: function(gameScore, error) {
                 // Execute any logic that should take place if the save fails.

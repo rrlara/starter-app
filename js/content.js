@@ -29,7 +29,7 @@ app.controller('ContentCtrl', function($scope, $rootScope, $mdSidenav, $mdBottom
 
         $scope.loadingMoments = true;
 
-        var query = parseQuery.new('HawaiiTrip');
+        var query = parseQuery.new('washingtondc');
 
         query.limit(1000);
         query.descending("createAt");
