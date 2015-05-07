@@ -43,10 +43,10 @@ app.controller('CameraCtrl', function($scope, $rootScope, $mdDialog, $timeout){
     $scope.showCameraPreview = function(ev) {
         $mdDialog.show({
             controller: 'GeoLocationCtrl',
-            template: '<md-dialog aria-label="Mango (Fruit)" ng-controller="UploadCtrl"> <md-content class="md-padding">' +
+            template: '<md-dialog aria-label="Mango (Fruit)"> <md-content class="md-padding">' +
             '<img id="myImg" height="200" width="200" image-resize image-percent="30"  ng-src="' + $rootScope.thumbnail.dataUrl + '"/>' +
             '<form name="userForm"> <md-input-container flex> <label>Biography</label> <textarea ng-model="comment" columns="1" md-maxlength="150"></textarea> ' +
-            '</md-input-container> </form> </md-content> <div class="md-actions" layout="row"> <span flex></span> ' +
+            '</md-input-container> </form> </md-content> <div class="md-actions" layout="row" ng-controller="UploadCtrl"> <span flex></span> ' +
             '<md-button ng-click="cancel()"> Cancel </md-button> ' +
             '<md-button ng-click="answer()" ng-disabled={{activeLocation}} class="md-primary"> Save </md-button> </div></md-dialog>',
             targetEvent: ev
@@ -56,7 +56,16 @@ app.controller('CameraCtrl', function($scope, $rootScope, $mdDialog, $timeout){
             }, function() {
                 console.log("function mdDialog");
             });
+
+        //$timeout( getImage, 6000);
+
+
     };
+
+    //function getImage(){
+    //    var imageDoc = document.getElementById('myImg');
+    //    var image = imageDoc;
+    //}
 
     //function DialogController($scope, $mdDialog) {
     //    $scope.hide = function() {

@@ -7,10 +7,21 @@ app.controller('UploadCtrl', function($scope, $rootScope, $mdDialog, $timeout){
 
     $rootScope.activeLocation = "false";
 
+    var image;
+
     $scope.comment = '';
     $scope.imageFile = {};
 
-    var image = $rootScope.thumbnail.dataUrl;
+    $timeout( getImage, 2000);
+
+    function getImage(){
+        var imageDoc = document.getElementById('myImg');
+        image = imageDoc.currentSrc;
+    }
+
+
+
+    //var image = $rootScope.thumbnail.dataUrl;
 
     //$scope.imageFile = image.replace(/data:image\/jpeg;base64,/, "");
 
