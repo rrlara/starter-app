@@ -17,7 +17,7 @@ app.controller('CameraCtrl', function($scope, $rootScope, $mdDialog, $timeout){
     $scope.photoChanged = function(files){
         console.log(files);
 
-        $scope.imageFile = files[0];
+        //$scope.imageFile = files[0];
 
         if (files != null) {
             var file = files[0];
@@ -30,6 +30,8 @@ app.controller('CameraCtrl', function($scope, $rootScope, $mdDialog, $timeout){
                         $timeout(function(){
                             $scope.thumbnail.dataUrl = e.target.result;
                             $scope.showCameraPreview();
+
+                            //$scope.imageFile = e;
                         });
                     }
                 });
@@ -65,7 +67,7 @@ app.controller('CameraCtrl', function($scope, $rootScope, $mdDialog, $timeout){
             $mdDialog.cancel();
         };
         $scope.answer = function(answer) {
-            uploadData($scope.comment, $mdDialog);
+            uploadData($scope.comment, $mdDialog, $scope.them);
             //$mdDialog.hide(answer);
             console.log($scope.comment);
 
