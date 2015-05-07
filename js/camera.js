@@ -42,7 +42,7 @@ app.controller('CameraCtrl', function($scope, $rootScope, $mdDialog, $timeout){
         $mdDialog.show({
             controller: DialogController,
             template: '<md-dialog aria-label="Mango (Fruit)"> <md-content class="md-padding">' +
-            '<img height="200" width="200" ng-src="' + $scope.thumbnail.dataUrl + '"/>' + '<canvas id="canvas" width="200" height="200" class="playable-canvas"></canvas>' +
+            '<img id="myImg" height="200" width="200" image-resize image-percent="10"  ng-src="' + $scope.thumbnail.dataUrl + '"/>' +
             '<form name="userForm"> <md-input-container flex> <label>Biography</label> <textarea ng-model="comment" columns="1" md-maxlength="150"></textarea> ' +
             '</md-input-container> </form> </md-content> <div class="md-actions" layout="row"> <span flex></span> ' +
             '<md-button ng-click="cancel()"> Cancel </md-button> ' +
@@ -73,6 +73,7 @@ app.controller('CameraCtrl', function($scope, $rootScope, $mdDialog, $timeout){
     };
 
     function uploadData (comment, closeDialog){
+
         var userDataEntry = {};
             //create photo 1 as a parse file
             var parseFile1 = null;
