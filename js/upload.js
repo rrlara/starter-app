@@ -9,15 +9,14 @@ app.controller('UploadCtrl', function($scope, $rootScope, $mdDialog, $timeout){
 
     var image;
 
-    $scope.comment = '';
-    $scope.imageFile = {};
 
-    $timeout( getImage, 2000);
 
-    function getImage(){
-        var imageDoc = document.getElementById('myImg');
-        image = imageDoc.currentSrc;
-    }
+    //$timeout( getImage, 2000);
+    //
+    //function getImage(){
+    //    var imageDoc = document.getElementById('myImg');
+    //    image = imageDoc.currentSrc;
+    //}
 
 
 
@@ -34,9 +33,9 @@ app.controller('UploadCtrl', function($scope, $rootScope, $mdDialog, $timeout){
         $mdDialog.cancel();
     };
     $scope.answer = function() {
-        uploadData($scope.comment, $mdDialog);
+        uploadData($rootScope.comment, $mdDialog);
         //$mdDialog.hide(answer);
-        console.log($scope.comment);
+        console.log($rootScope.comment);
 
     };
 
@@ -46,9 +45,9 @@ app.controller('UploadCtrl', function($scope, $rootScope, $mdDialog, $timeout){
         var userDataEntry = {};
             //create photo 1 as a parse file
             var parseFile1 = null;
-            if ($scope.imageFile) {
+            if ($rootScope.imageFile) {
                 //parseFile1 = new Parse.File("photo.jpg", $scope.imageFile);
-                parseFile1 = new Parse.File("photo.jpg", {base64: image}, "image/jpg");
+                parseFile1 = new Parse.File("photo.jpg", {base64: $rootScope.imageFile}, "image/jpg");
             }
 
 
@@ -82,6 +81,7 @@ app.controller('UploadCtrl', function($scope, $rootScope, $mdDialog, $timeout){
                 //alert('New object created with objectId: ' + gameScore.id);
 
                 $rootScope.activeLocation = "false";
+                $rootScope.find();
                 closeDialog.hide();
             },
             error: function(gameScore, error) {

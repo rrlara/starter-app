@@ -25,7 +25,7 @@ app.controller('ContentCtrl', function($scope, $rootScope, $mdSidenav, $mdBottom
     $scope.loadingMoments = false;
 
     // retrieve a list of 1000 items from server and the total number of items
-    $scope.find = function() {
+    $rootScope.find = function() {
 
         $scope.loadingMoments = true;
 
@@ -47,7 +47,7 @@ app.controller('ContentCtrl', function($scope, $rootScope, $mdSidenav, $mdBottom
 
     }
     function initialLoadOfMoments(){
-        $scope.find();
+        $rootScope.find();
     }
     initialLoadOfMoments();
 

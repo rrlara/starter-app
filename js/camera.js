@@ -49,113 +49,23 @@ app.controller('CameraCtrl', function($scope, $rootScope, $mdDialog, $timeout){
             '</md-input-container> </form> </md-content> <div class="md-actions" layout="row" ng-controller="UploadCtrl"> <span flex></span> ' +
             '<md-button ng-click="cancel()"> Cancel </md-button> ' +
             '<md-button ng-click="answer()" ng-disabled={{activeLocation}} class="md-primary"> Save </md-button> </div></md-dialog>',
-            targetEvent: ev
+            targetEvent: ev,
+            onComplete: getImage
         })
             .then(function() {
                 console.log("then mdDialog");
             }, function() {
                 console.log("function mdDialog");
             });
-
-        //$timeout( getImage, 6000);
-
-
     };
 
-    //function getImage(){
-    //    var imageDoc = document.getElementById('myImg');
-    //    var image = imageDoc;
-    //}
+    function getImage(){
+        var imageDoc = document.getElementById('myImg');
+        $rootScope.imageFile = imageDoc.currentSrc;
 
-    //function DialogController($scope, $mdDialog) {
-    //    $scope.hide = function() {
-    //        $mdDialog.hide();
-    //
-    //    };
-    //    $scope.cancel = function() {
-    //        $mdDialog.cancel();
-    //    };
-    //    $scope.answer = function(answer) {
-    //        uploadData($scope.comment, $mdDialog, $scope.them);
-    //        //$mdDialog.hide(answer);
-    //        console.log($scope.comment);
-    //
-    //    };
-    //};
+        $rootScope.comment = '';
+    }
 
-    //function uploadData (comment, closeDialog){
-    //
-    //    var userDataEntry = {};
-    //        //create photo 1 as a parse file
-    //        var parseFile1 = null;
-    //        if ($scope.imageFile) {
-    //            parseFile1 = new Parse.File("photo.jpg", $scope.imageFile);
-    //        }
-    //
-    //
-    //
-    //        userDataEntry.altitude = '';
-    //        userDataEntry.latitude = ($scope.latitude).toString();
-    //        userDataEntry.longitude = ($scope.longitude).toString();
-    //        userDataEntry.comment = comment;
-    //        userDataEntry.imageFile = parseFile1;
-    //        userDataEntry.trueHeading = '';
-    //        userDataEntry.thumbnail = parseFile1;
-    //
-    //    saveToParse(userDataEntry, closeDialog);
-    //}
-    //
-    //function saveToParse(obj,closeDialog){
-    //    var GameScore = Parse.Object.extend("washingtondc");
-    //    var gameScore = new GameScore();
-    //
-    //    gameScore.set("altitude", obj.altitude);
-    //    gameScore.set("latitude", obj.latitude);
-    //    gameScore.set("longitude", obj.longitude);
-    //    gameScore.set("comment", obj.comment);
-    //    gameScore.set("imageFile", obj.imageFile);
-    //    gameScore.set("trueHeading", obj.trueHeading);
-    //    gameScore.set("thumbnail", obj.thumbnail);
-    //
-    //    gameScore.save(null, {
-    //        success: function(gameScore) {
-    //            // Execute any logic that should take place after the object is saved.
-    //            //alert('New object created with objectId: ' + gameScore.id);
-    //
-    //            closeDialog.hide();
-    //        },
-    //        error: function(gameScore, error) {
-    //            // Execute any logic that should take place if the save fails.
-    //            // error is a Parse.Error with an error code and message.
-    //            alert('Failed to create new object, with error code: ' + error.message);
-    //        }
-    //    });
-    //}
-    //
-    //var options = {
-    //    enableHighAccuracy: true,
-    //    timeout: 5000,
-    //    maximumAge: 0
-    //};
-    //
-    //function success(pos) {
-    //    var crd = pos.coords;
-    //
-    //    console.log('Your current position is:');
-    //    console.log('Latitude : ' + crd.latitude);
-    //    console.log('Longitude: ' + crd.longitude);
-    //    console.log('More or less ' + crd.accuracy + ' meters.');
-    //
-    //    $scope.latitude = crd.latitude;
-    //    $scope.longitude = crd.longitude;
-    //
-    //};
-    //
-    //function error(err) {
-    //    console.warn('ERROR(' + err.code + '): ' + err.message);
-    //};
-    //
-    //navigator.geolocation.getCurrentPosition(success, error, options);
 
 
 
