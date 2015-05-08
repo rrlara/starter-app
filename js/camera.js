@@ -61,7 +61,7 @@ app.controller('CameraCtrl', function($scope, $rootScope, $mdDialog, $timeout){
 
     function getImage(){
         var imageDoc = document.getElementById('myImg');
-        $rootScope.imageFile = imageDoc.currentSrc;
+        $rootScope.imageFile = imageDoc.src;
 
         $rootScope.comment = '';
     }
