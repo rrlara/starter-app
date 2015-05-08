@@ -148,6 +148,12 @@ app.controller('ContentCtrl', function($scope, $rootScope, $mdSidenav, $mdBottom
         console.log('Longitude: ' + crd.longitude);
         console.log('More or less ' + crd.accuracy + ' meters.');
 
+        $rootScope.LocationMessage = crd.latitude + ", " + crd.longitude + " ~ "  + crd.accuracy + ' meters.';
+
+        $rootScope.LocationMessage = ($rootScope.LocationMessage).toString();
+
+        console.log($rootScope.LocationMessage);
+
         $rootScope.latitude = crd.latitude;
         $rootScope.longitude = crd.longitude;
 
