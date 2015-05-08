@@ -42,7 +42,7 @@ app.controller('CameraCtrl', function($scope, $rootScope, $mdDialog, $timeout){
 
     $scope.showCameraPreview = function(ev) {
         $mdDialog.show({
-            controller: 'GeoLocationCtrl',
+            controller: '',
             template: '<md-dialog aria-label="Mango (Fruit)"> <md-content class="md-padding">' +
             '<img id="myImg" height="200" width="200" image-resize image-percent="30"  ng-src="' + $rootScope.thumbnail.dataUrl + '"/>' +
             '<form name="userForm"> <md-input-container flex> <label>Biography</label> <textarea ng-model="comment" columns="1" md-maxlength="150"></textarea> ' +

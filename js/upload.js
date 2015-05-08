@@ -5,7 +5,7 @@
 
 app.controller('UploadCtrl', function($scope, $rootScope, $mdDialog, $timeout){
 
-    $rootScope.activeLocation = "false";
+
 
     var image;
 
@@ -80,7 +80,7 @@ app.controller('UploadCtrl', function($scope, $rootScope, $mdDialog, $timeout){
                 // Execute any logic that should take place after the object is saved.
                 //alert('New object created with objectId: ' + gameScore.id);
 
-                $rootScope.activeLocation = "false";
+                $rootScope.activeLocation = false;
                 $rootScope.find();
                 closeDialog.hide();
             },
