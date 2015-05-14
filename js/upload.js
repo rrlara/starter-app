@@ -9,22 +9,6 @@ app.controller('UploadCtrl', function($scope, $rootScope, $mdDialog, $timeout){
 
     var image;
 
-
-
-    //$timeout( getImage, 2000);
-    //
-    //function getImage(){
-    //    var imageDoc = document.getElementById('myImg');
-    //    image = imageDoc.currentSrc;
-    //}
-
-
-
-    //var image = $rootScope.thumbnail.dataUrl;
-
-    //$scope.imageFile = image.replace(/data:image\/jpeg;base64,/, "");
-
-
     $scope.hide = function() {
         $mdDialog.hide();
 

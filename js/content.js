@@ -32,7 +32,7 @@ app.controller('ContentCtrl', function($scope, $rootScope, $mdSidenav, $mdBottom
         var query = parseQuery.new('washingtondc');
 
         query.limit(1000);
-        query.descending("createAt");
+        query.descending("createdAt");
 
         parseQuery.find(query)
             .then(function(results) {
@@ -63,7 +63,7 @@ app.controller('ContentCtrl', function($scope, $rootScope, $mdSidenav, $mdBottom
         var query = parseQuery.new(className);
 
         query.limit(1000);
-        query.descending("createAt");
+        query.descending("createdAt");
 
         parseQuery.find(query)
             .then(function(results) {
