@@ -45,7 +45,7 @@ app.controller('PhoneStateCtrl', function($scope, $rootScope, $element, $window)
                 deviceOrientationHandler(tiltLR, tiltFB, dir);
             }, false);
         } else {
-            alert("Not supported on your device or browser.  Sorry.");
+            console.error("Not supported on your device or browser.  Sorry.");
         }
     }
 

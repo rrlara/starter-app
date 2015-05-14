@@ -5,7 +5,7 @@
 //var app = angular.module('leapspot');
 Parse.initialize('f978idlmBlmLY2CnQwovpPtQaFwvALWhDlf6RE53', 'yFJzzjG5oasySFmbNPumsxCaUofcolddTUIDQAKK');
 
-app.controller('ContentCtrl', function($scope, $rootScope, $mdSidenav, $mdBottomSheet, $mdDialog, parsePersistence, parseQuery){
+app.controller('ContentCtrl', function($scope, $rootScope, $mdSidenav, $mdBottomSheet, $mdDialog, $mdToast, parsePersistence, parseQuery){
 
     $scope.toggleSidenav = function(menuId) {
         $mdSidenav(menuId).toggle();
@@ -166,6 +166,18 @@ app.controller('ContentCtrl', function($scope, $rootScope, $mdSidenav, $mdBottom
     };
 
     navigator.geolocation.getCurrentPosition(success, error, options);
+
+
+    $rootScope.showSimpleToast = function() {
+        $mdToast.show(
+            $mdToast.simple()
+                .content('Simple Toast!')
+                .position('bottom left')
+                .hideDelay(3000)
+        );
+    };
+
+    $rootScope.showSimpleToast();
 
 
 
