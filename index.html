@@ -134,8 +134,9 @@
                 <md-grid-tile class="blue"
                 md-rowspan="2"
                 ng-repeat="item in data.items"
-                        ng-click="activeMoment(item.id, data.items); demoCtrl.$showSource = !demoCtrl.$showSource" ng-class="{highlight: item.active}">
-                  <img src="{{item.attributes.thumbnail._url}}" alt="Smiley face" width="900">
+                        ng-click="activeMoment(item.id, data.items); demoCtrl.$showSource = !demoCtrl.$showSource" ng-class="{highlight: item.active}"
+                              back-img="{{item.attributes.thumbnail._url}}">
+                  <!--<img src="{{item.attributes.thumbnail._url}}" alt="Smiley face" width="900">-->
                   <div class=""></div>
                   <md-grid-tile-footer ng-click="addToImageClicked(item); showAdd($event)" ng-show="expandImage">
                 <h3>{{item.attributes.comment}}</h3>

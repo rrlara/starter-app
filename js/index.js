@@ -23,6 +23,18 @@ app.directive("imageResize", [
   }
 ]);
 
+app.directive('backImg', function(){
+  return function(scope, element, attrs){
+    var url = attrs.backImg;
+    element.css({
+      'background-image': 'url(' + url +')',
+      'background-size' : 'cover',
+      'background-position': 'center'
+  });
+};
+});
+
+
 app.controller('AppCtrl', ['$scope', '$mdBottomSheet','$mdSidenav', '$mdDialog','$mdMedia', function($scope, $mdBottomSheet, $mdSidenav, $mdDialog, $mdMedia){
   $scope.toggleSidenav = function(menuId) {
     $mdSidenav(menuId).toggle();
