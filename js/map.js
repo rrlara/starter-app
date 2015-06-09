@@ -19,7 +19,11 @@ app.controller('MapCtrl', ['$scope','$rootScope', function($scope, $rootScope){
         map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
     }
-    initialize();
+
+    if (!map){
+        initialize();
+    }
+
 
     var circle ={
         path: google.maps.SymbolPath.CIRCLE,
